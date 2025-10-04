@@ -1,0 +1,697 @@
+<!-- Microsoft 365 Style Chat Interface with Designer Background -->
+<div class="row sectionBlockLayout text-start" style='display: flex; flex-wrap: wrap; margin: 0px; min-height: 100vh; padding: 40px; background-image: url("/Designer.png"); background-size: cover; background-position: center center; background-repeat: no-repeat; background-attachment: fixed; position: relative;'>
+  <!-- Background Overlay for better contrast -->
+  <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0, 0, 0, 0.4); z-index: 1;"></div>
+  <div class="container-fluid" style="padding: 0px; display: flex; justify-content: center; align-items: flex-start; min-height: auto; max-width: 100%; padding-top: 40px; position: relative; z-index: 2;">
+    <!-- Centered Chat Container with Drop Shadow -->
+    <div class="chat-wrapper" style="width: 100%; max-width: 1000px; background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); border-radius: 16px; box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2), 0 2px 6px rgba(0, 0, 0, 0.15); overflow: hidden; border: 1px solid rgba(255, 255, 255, 0.2);">
+      `
+      <!-- Chat Interface Container -->
+      <div class="chat-container" style="display: flex; flex-direction: column; height: auto; min-height: 300px; background: #f3f2f1; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+        <!-- Chat Header -->
+        <div class="chat-header" style="background: white; border-bottom: 1px solid #e1dfdd; padding: 16px 24px; display: flex; align-items: center; justify-content: space-between; box-shadow: 0 1px 2px rgba(0,0,0,0.04);">
+          <div style="display: flex; align-items: center; gap: 12px;">
+            <img src="https://max365.powerappsportals.com/Max%20Bot%20-%20without%20name.png" alt="Max Bot" style="width: 32px; height: 32px; border-radius: 50%; object-fit: cover; border: 2px solid #0078d4;" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+            <div style="width: 32px; height: 32px; background: linear-gradient(135deg, #0078d4 0%, #106ebe 100%); border-radius: 50%; display: none; align-items: center; justify-content: center; color: white; font-weight: 600; font-size: 14px;">MAX</div>
+            <div>
+              <h3 style="margin: 0; font-size: 16px; font-weight: 600; color: #323130;">Max365 Digital Staff</h3>
+              <p style="margin: 0; font-size: 12px; color: #605e5c;">AI-powered assistance for your business</p>
+            </div>
+          </div>
+          <div style="display: flex; gap: 8px; align-items: center;">
+            <span style="background: #237b4b; color: white; padding: 4px 8px; border-radius: 12px; font-size: 11px; font-weight: 500;">● Online</span
+            ><!-- Collapse Button (initially hidden) --><button id="collapseButton" onclick="collapseChatFromFullScreen()" onmouseover="this.style.background='#0078d4'; this.style.color='white'; this.style.transform='scale(1.05)'; this.style.boxShadow='0 4px 12px rgba(0,120,212,0.25)'" onmouseout="this.style.background='#f8f9fa'; this.style.color='#0078d4'; this.style.transform='scale(1)'; this.style.boxShadow='0 2px 6px rgba(0,120,212,0.15)'" title="Minimize chat to compact view" style="display: none; background: #f8f9fa; border: 1px solid #0078d4; padding: 8px 16px; border-radius: 20px; cursor: pointer; color: #0078d4; font-size: 13px; font-weight: 600; transition: all 0.2s ease; box-shadow: 0 2px 6px rgba(0,120,212,0.15);">↕️ Minimize</button>
+          </div>
+        </div>
+        <!-- Chat Messages Area -->
+        <div id="chatMessages" class="chat-messages" style="overflow-y: auto; padding: 16px 24px; display: flex; flex-direction: column; gap: 16px; background: #f3f2f1;">
+          <!-- Welcome Message -->
+          <div class="message-group" style="display: flex; align-items: flex-start; gap: 12px;">
+            <img src="https://max365.powerappsportals.com/Max%20Bot%20-%20without%20name.png" alt="Max Bot" class="avatar" style="width: 28px; height: 28px; border-radius: 50%; object-fit: cover; border: 2px solid #0078d4; flex-shrink: 0;" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+            <div class="avatar" style="width: 28px; height: 28px; background: linear-gradient(135deg, #0078d4 0%, #106ebe 100%); border-radius: 50%; display: none; align-items: center; justify-content: center; color: white; font-weight: 600; font-size: 12px; flex-shrink: 0;">MAX</div>
+            <div class="message-content" style="max-width: 70%; display: flex; flex-direction: column; gap: 8px;">
+              <div class="message-bubble" style="background: white; padding: 12px 16px; border-radius: 16px; border-bottom-left-radius: 4px; box-shadow: 0 1px 2px rgba(0,0,0,0.04); border: 1px solid #e1dfdd;"><p style="margin: 0; color: #323130; font-size: 14px; line-height: 1.4;">Welcome to Max365, your partner in maximizing the value of your Microsoft investment.</p></div>
+              <div class="message-bubble" style="background: white; padding: 12px 16px; border-radius: 16px; border-bottom-left-radius: 4px; box-shadow: 0 1px 2px rgba(0,0,0,0.04); border: 1px solid #e1dfdd;"><p style="margin: 0; color: #323130; font-size: 14px; line-height: 1.4;">My name is Max, and I'm here as part of our dedicated team ready to support you.</p></div>
+              <div class="message-bubble" style="background: white; padding: 12px 16px; border-radius: 16px; border-bottom-left-radius: 4px; box-shadow: 0 1px 2px rgba(0,0,0,0.04); border: 1px solid #e1dfdd;"><p style="margin: 0; color: #323130; font-size: 14px; line-height: 1.4;">You can begin by selecting one of the prompts below or simply type your question in the text box provided.</p></div>
+              <div class="message-timestamp" style="font-size: 11px; color: #605e5c; margin-left: 16px;">Just now</div>
+            </div>
+          </div>
+        </div>
+        <!-- Chat Input Area -->
+        <div class="chat-input-container" style="background: white; border-top: 1px solid #e1dfdd; padding: 16px 24px;">
+          <div class="input-wrapper" style="display: flex; align-items: flex-end; gap: 12px; max-width: 100%; position: relative;">
+            <!-- Message Input -->
+            <div class="message-input-container" style="flex: 1; position: relative;">
+              <textarea id="messageInput" placeholder="Type a message..." rows="1" onfocus="this.style.background='white'; this.style.borderColor='#0078d4'; this.parentElement.querySelector('.input-underline').style.opacity='1'" onblur="this.style.background='#f9f9f9'; this.style.borderColor='#e1dfdd'; this.parentElement.querySelector('.input-underline').style.opacity='0'" oninput="autoResize(this); toggleSendButton()" onkeydown="handleKeyPress(event)" style="width: 100%; min-height: 20px; max-height: 120px; padding: 12px 48px 12px 16px; border: 1px solid #e1dfdd; border-radius: 20px; font-family: 'Segoe UI', sans-serif; font-size: 14px; line-height: 1.4; resize: none; outline: none; background: #f9f9f9; transition: all 0.2s ease;"></textarea
+              ><!-- Thin blue underline -->
+              <div class="input-underline" style="position: absolute; bottom: -2px; left: 0; right: 0; height: 2px; background: linear-gradient(135deg, #0078d4 0%, #106ebe 100%); border-radius: 1px; opacity: 0; transition: opacity 0.2s ease;"></div>
+              <!-- Send Button --><button id="sendButton" onclick="sendMessage()" disabled="" style="position: absolute; right: 8px; bottom: 8px; width: 32px; height: 32px; border: none; border-radius: 50%; background: #e1dfdd; color: white; display: flex; align-items: center; justify-content: center; cursor: not-allowed; transition: all 0.2s ease; font-size: 16px;">➤</button>
+            </div>
+          </div>
+          <!-- Input Footer -->
+          <div style="margin-top: 8px; font-size: 11px; color: #605e5c; text-align: center;">Max365 Assistant powered by AI. Please verify important information.</div>
+        </div>
+      </div>
+      <!-- Suggested Actions Below Chat -->
+      <div class="suggested-actions" style="display: flex; flex-wrap: wrap; gap: 12px; margin: 24px 0; justify-content: center; max-width: 1000px; position: relative; z-index: 2;"><button onclick="sendSuggestedMessage('Tell me more about Max365')" onmouseover="this.style.background='rgba(243, 242, 241, 0.98)'; this.style.borderColor='rgba(200, 198, 196, 0.9)'; this.style.transform='translateY(-1px)'; this.style.boxShadow='0 4px 12px rgba(0,0,0,0.25)'" onmouseout="this.style.background='rgba(255, 255, 255, 0.95)'; this.style.borderColor='rgba(225, 223, 221, 0.8)'; this.style.transform='translateY(0)'; this.style.boxShadow='0 2px 6px rgba(0,0,0,0.15)'" class="suggestion-chip" style="background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); border: 1px solid rgba(225, 223, 221, 0.8); padding: 12px 20px; border-radius: 24px; font-size: 14px; color: #323130; cursor: pointer; transition: all 0.2s ease; box-shadow: 0 2px 6px rgba(0,0,0,0.15);">📖 Tell me more about Max365</button><button onclick="sendSuggestedMessage('Tell me about pricing')" onmouseover="this.style.background='rgba(243, 242, 241, 0.98)'; this.style.borderColor='rgba(200, 198, 196, 0.9)'; this.style.transform='translateY(-1px)'; this.style.boxShadow='0 4px 12px rgba(0,0,0,0.25)'" onmouseout="this.style.background='rgba(255, 255, 255, 0.95)'; this.style.borderColor='rgba(225, 223, 221, 0.8)'; this.style.transform='translateY(0)'; this.style.boxShadow='0 2px 6px rgba(0,0,0,0.15)'" class="suggestion-chip" style="background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); border: 1px solid rgba(225, 223, 221, 0.8); padding: 12px 20px; border-radius: 24px; font-size: 14px; color: #323130; cursor: pointer; transition: all 0.2s ease; box-shadow: 0 2px 6px rgba(0,0,0,0.15);">💰 Tell me about pricing</button><button onclick="sendSuggestedMessage('I need technical support')" onmouseover="this.style.background='rgba(243, 242, 241, 0.98)'; this.style.borderColor='rgba(200, 198, 196, 0.9)'; this.style.transform='translateY(-1px)'; this.style.boxShadow='0 4px 12px rgba(0,0,0,0.25)'" onmouseout="this.style.background='rgba(255, 255, 255, 0.95)'; this.style.borderColor='rgba(225, 223, 221, 0.8)'; this.style.transform='translateY(0)'; this.style.boxShadow='0 2px 6px rgba(0,0,0,0.15)'" class="suggestion-chip" style="background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); border: 1px solid rgba(225, 223, 221, 0.8); padding: 12px 20px; border-radius: 24px; font-size: 14px; color: #323130; cursor: pointer; transition: all 0.2s ease; box-shadow: 0 2px 6px rgba(0,0,0,0.15);">🛠️ I need technical support</button><button onclick="sendSuggestedMessage('Get a quote')" onmouseover="this.style.background='rgba(243, 242, 241, 0.98)'; this.style.borderColor='rgba(200, 198, 196, 0.9)'; this.style.transform='translateY(-1px)'; this.style.boxShadow='0 4px 12px rgba(0,0,0,0.25)'" onmouseout="this.style.background='rgba(255, 255, 255, 0.95)'; this.style.borderColor='rgba(225, 223, 221, 0.8)'; this.style.transform='translateY(0)'; this.style.boxShadow='0 2px 6px rgba(0,0,0,0.15)'" class="suggestion-chip" style="background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); border: 1px solid rgba(225, 223, 221, 0.8); padding: 12px 20px; border-radius: 24px; font-size: 14px; color: #323130; cursor: pointer; transition: all 0.2s ease; box-shadow: 0 2px 6px rgba(0,0,0,0.15);">📋 Get a quote</button></div>
+    </div>
+  </div>
+  <script>
+    // Auto-resize textarea
+    function autoResize(textarea) {
+      textarea.style.height = '20px';
+      textarea.style.height = Math.min(textarea.scrollHeight, 120) + 'px';
+    }
+
+    // Toggle send button state
+    function toggleSendButton() {
+      const input = document.getElementById('messageInput');
+      const sendButton = document.getElementById('sendButton');
+      const hasText = input.value.trim().length > 0;
+
+      if (hasText) {
+        sendButton.disabled = false;
+        sendButton.style.background = 'linear-gradient(135deg, #0078d4 0%, #106ebe 100%)';
+        sendButton.style.cursor = 'pointer';
+      } else {
+        sendButton.disabled = true;
+        sendButton.style.background = '#e1dfdd';
+        sendButton.style.cursor = 'not-allowed';
+      }
+    }
+
+    // Handle Enter key
+    function handleKeyPress(event) {
+      if (event.key === 'Enter' && !event.shiftKey) {
+        event.preventDefault();
+        sendMessage();
+      }
+    }
+
+    // Send message function (ready for new integration)
+    function sendMessage() {
+      const input = document.getElementById('messageInput');
+      const message = input.value.trim();
+
+      if (message) {
+        // Expand chat to full screen on first user interaction
+        expandChatToFullScreen();
+
+        addUserMessage(message);
+        input.value = '';
+        autoResize(input);
+        toggleSendButton();
+
+        // Show typing indicator
+        showTypingIndicator();
+
+        // Send message to Copilot Studio via Direct Line
+        sendToCopilotStudio(message);
+      }
+    }
+
+    // Direct Line integration with Copilot Studio
+    let directLineConnection = null;
+    const DIRECT_LINE_SECRET = 'YOUR_DIRECT_LINE_SECRET_HERE';
+
+    async function initializeCopilotConnection() {
+      try {
+        console.log('🔄 Initializing Copilot Studio connection...');
+
+        if (!DIRECT_LINE_SECRET || DIRECT_LINE_SECRET.includes('YOUR_DIRECT_LINE_SECRET_HERE')) {
+          throw new Error('Direct Line secret not configured. Please update DIRECT_LINE_SECRET.');
+        }
+
+        // Create Direct Line conversation
+        const response = await fetch('https://directline.botframework.com/v3/directline/conversations', {
+          method: 'POST',
+          headers: {
+            'Authorization': `Bearer ${DIRECT_LINE_SECRET}`,
+            'Content-Type': 'application/json'
+          }
+        });
+
+        if (!response.ok) {
+          throw new Error(`Failed to create Direct Line conversation: ${response.status}`);
+        }
+
+        const data = await response.json();
+        directLineConnection = {
+          conversationId: data.conversationId,
+          token: data.token,
+          streamUrl: data.streamUrl
+        };
+
+        console.log('✅ Direct Line conversation created:', data);
+
+        // Start listening for bot responses
+        startListeningForResponses();
+        console.log('✅ Connected to Copilot Studio successfully');
+
+      } catch (error) {
+        console.error('❌ Failed to connect to Copilot Studio:', error);
+        addBotMessage(`Connection failed: ${error.message}`);
+      }
+    }
+
+    async function sendToCopilotStudio(message) {
+      console.log('📤 Sending message to Copilot Studio:', message);
+
+      if (!directLineConnection) {
+        console.log('🔄 No connection, initializing...');
+        await initializeCopilotConnection();
+      }
+
+      if (!directLineConnection) {
+        removeTypingIndicator();
+        addBotMessage("Sorry, I'm unable to connect to the chat service right now. Please refresh the page and try again.");
+        return;
+      }
+
+      try {
+        const userId = 'user-' + Math.random().toString(36).substr(2, 9);
+        const messagePayload = {
+          type: 'message',
+          from: { id: userId },
+          text: message
+        };
+
+        console.log('📤 Sending payload:', messagePayload);
+
+        const response = await fetch(`https://directline.botframework.com/v3/directline/conversations/${directLineConnection.conversationId}/activities`, {
+          method: 'POST',
+          headers: {
+            'Authorization': `Bearer ${directLineConnection.token}`,
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(messagePayload)
+        });
+
+        console.log('📤 Send response status:', response.status, response.statusText);
+
+        if (!response.ok) {
+          const errorText = await response.text();
+          console.error('❌ Send error response:', errorText);
+          throw new Error(`Failed to send message: ${response.status} ${response.statusText}`);
+        }
+
+        const responseData = await response.json();
+        console.log('✅ Message sent successfully:', responseData);
+
+      } catch (error) {
+        console.error('❌ Error sending message:', error);
+        removeTypingIndicator();
+        addBotMessage(`Send failed: ${error.message}. Please try again.`);
+      }
+    }
+
+    // Listen for bot responses
+    let lastActivityId = 0;
+    let pollingActive = false;
+
+    async function startListeningForResponses() {
+      if (!directLineConnection || pollingActive) return;
+
+      pollingActive = true;
+      console.log('🎧 Starting to listen for bot responses...');
+
+      const pollForMessages = async () => {
+        if (!directLineConnection || !pollingActive) return;
+
+        try {
+          const url = `https://directline.botframework.com/v3/directline/conversations/${directLineConnection.conversationId}/activities?watermark=${lastActivityId}`;
+          console.log('📥 Polling for messages...', 'watermark:', lastActivityId);
+
+          const response = await fetch(url, {
+            headers: { 'Authorization': `Bearer ${directLineConnection.token}` }
+          });
+
+          if (response.ok) {
+            const data = await response.json();
+            console.log('📨 Received activities:', data.activities?.length || 0);
+            console.log('📨 Full response data:', data);
+
+            if (data.activities && data.activities.length > 0) {
+              // Process ALL activities to ensure we don't miss any
+              data.activities.forEach((activity, index) => {
+                console.log(`🔍 Processing activity ${index + 1}/${data.activities.length}:`, {
+                  id: activity.id,
+                  type: activity.type,
+                  from: activity.from,
+                  text: activity.text,
+                  timestamp: activity.timestamp
+                });
+
+                // Check if this is a bot message (not from user and not a conversationUpdate)
+                const isFromBot = activity.from && (
+                  activity.from.id === 'bot' ||
+                  activity.from.name === 'Bot' ||
+                  activity.from.role === 'bot' ||
+                  !activity.from.id.includes('user')
+                );
+
+                const isMessageType = activity.type === 'message';
+                const hasText = activity.text && activity.text.trim().length > 0;
+                // Extract numeric part from activity ID (e.g., "4XSk9u8LFvgFxjPCITiTdL-au|0000005" -> 5)
+                const activityIdParts = activity.id.split('|');
+                const activityNumber = activityIdParts.length > 1 ? parseInt(activityIdParts[1]) : parseInt(activity.id);
+                const isNewActivity = !lastActivityId || activityNumber > lastActivityId;
+
+                console.log('🔍 Activity checks:', {
+                  isFromBot,
+                  isMessageType,
+                  hasText,
+                  isNewActivity,
+                  activityId: activity.id,
+                  activityNumber,
+                  lastActivityId,
+                  rawActivityId: activity.id
+                });
+
+                if (isFromBot && isMessageType && hasText && isNewActivity) {
+                  console.log('💬 Bot message received:', activity.text);
+                  addBotMessage(activity.text);
+                }
+              });
+
+              // Update watermark to the highest activity ID (handle complex ID format)
+              const activityNumbers = data.activities.map(a => {
+                const parts = a.id.split('|');
+                return parts.length > 1 ? parseInt(parts[1]) : parseInt(a.id);
+              }).filter(id => !isNaN(id));
+
+              if (activityNumbers.length > 0) {
+                const newWatermark = Math.max(...activityNumbers);
+                console.log('📍 Updating watermark from', lastActivityId, 'to', newWatermark);
+                lastActivityId = newWatermark;
+              }
+
+              // Also update watermark from response if available
+              if (data.watermark) {
+                console.log('📍 Response watermark:', data.watermark);
+                lastActivityId = Math.max(lastActivityId, parseInt(data.watermark) || 0);
+              }
+            } else {
+              console.log('📭 No activities in response');
+            }
+          } else {
+            console.error('❌ Polling failed:', response.status, response.statusText);
+            const errorText = await response.text();
+            console.error('❌ Error response:', errorText);
+
+            if (response.status === 403 || response.status === 401) {
+              console.error('🔐 Authentication issue - stopping polling');
+              pollingActive = false;
+              return;
+            }
+          }
+
+        } catch (error) {
+          console.error('❌ Error polling for messages:', error);
+        }
+
+        // Continue polling every 3 seconds if still active
+        if (pollingActive) {
+          setTimeout(pollForMessages, 3000);
+        }
+      };
+
+      // Start polling after a short delay
+      setTimeout(pollForMessages, 1000);
+    }
+
+    // Expand chat to full screen
+    let isFullScreen = false;
+    function expandChatToFullScreen() {
+      if (isFullScreen) return; // Already expanded
+
+      isFullScreen = true;
+
+      const chatWrapper = document.querySelector('.chat-wrapper');
+      const chatContainer = document.querySelector('.chat-container');
+      const outerContainer = document.querySelector('.container-fluid');
+      const chatInputContainer = document.querySelector('.chat-input-container');
+
+      if (chatWrapper && chatContainer && outerContainer) {
+        // Animate to full screen
+        chatWrapper.style.transition = 'all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94)';
+        chatContainer.style.transition = 'height 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94)';
+
+        // Expand wrapper to 80% width but keep page header visible
+        setTimeout(() => {
+          // Calculate header height with extra spacing (40px below header)
+          const headerHeight = 80; // Header height
+          const topSpacing = 40; // Additional spacing below header
+          const totalTopOffset = headerHeight + topSpacing;
+          const availableHeight = `calc(100vh - ${totalTopOffset}px)`;
+
+          chatWrapper.style.maxWidth = '80vw';
+          chatWrapper.style.width = '80vw';
+          chatWrapper.style.height = availableHeight;
+          chatWrapper.style.borderRadius = '16px';
+          chatWrapper.style.boxShadow = '0 12px 48px rgba(0, 0, 0, 0.15), 0 4px 12px rgba(0, 0, 0, 0.1)';
+          chatWrapper.style.position = 'fixed';
+          chatWrapper.style.top = `${totalTopOffset}px`; // Position with 20px spacing below header
+          chatWrapper.style.left = '50%';
+          chatWrapper.style.transform = 'translateX(-50%)';
+          chatWrapper.style.zIndex = '500';
+
+          // Expand chat container height to fill available space
+          chatContainer.style.height = availableHeight;
+          chatContainer.style.maxHeight = availableHeight;
+
+          // Move input container to bottom of viewport and make it sticky
+          if (chatInputContainer) {
+            chatInputContainer.style.position = 'fixed';
+            chatInputContainer.style.bottom = '0';
+            chatInputContainer.style.left = '0';
+            chatInputContainer.style.right = '0';
+            chatInputContainer.style.zIndex = '502';
+            chatInputContainer.style.boxShadow = '0 -4px 20px rgba(0,0,0,0.15)';
+            chatInputContainer.style.maxWidth = '80vw';
+            chatInputContainer.style.margin = '0 auto';
+            chatInputContainer.style.borderRadius = '16px 16px 0 0';
+          }
+
+          // Adjust outer container
+          outerContainer.style.padding = '0px';
+          outerContainer.style.minHeight = availableHeight;
+          outerContainer.style.height = availableHeight;
+          outerContainer.style.overflow = 'hidden';
+
+          // Don't prevent body scrolling completely, just limit it
+          document.body.style.overflowX = 'hidden';
+
+          // Force header to stay on top
+          const headerElements = document.querySelectorAll('header, .header, [role="banner"], nav, .navbar, .navigation');
+          headerElements.forEach(element => {
+            element.style.zIndex = '10000';
+            element.style.position = 'relative';
+          });
+
+          // Also try to find common header class names
+          const commonHeaders = document.querySelectorAll('.site-header, .main-header, .page-header, .top-header');
+          commonHeaders.forEach(element => {
+            element.style.zIndex = '10000';
+            element.style.position = 'relative';
+          });
+
+          // Show collapse button
+          const collapseButton = document.getElementById('collapseButton');
+          if (collapseButton) {
+            collapseButton.style.display = 'block';
+          }
+
+          // Ensure messages area accounts for fixed input at bottom
+          const chatMessages = document.getElementById('chatMessages');
+          if (chatMessages) {
+            chatMessages.style.paddingBottom = '120px'; // Extra space for fixed input area
+            chatMessages.style.maxHeight = `calc(${availableHeight} - 100px)`; // Account for chat header, input is now fixed
+            chatMessages.style.overflowY = 'auto';
+          }
+
+          // Hide suggested actions when in full screen
+          const suggestedActions = document.querySelector('.suggested-actions');
+          if (suggestedActions) {
+            suggestedActions.style.display = 'none';
+          }
+
+        }, 50);
+      }
+    }
+
+    // Collapse chat back to original compact size
+    function collapseChatFromFullScreen() {
+      if (!isFullScreen) return; // Not expanded
+
+      isFullScreen = false;
+
+      const chatWrapper = document.querySelector('.chat-wrapper');
+      const chatContainer = document.querySelector('.chat-container');
+      const outerContainer = document.querySelector('.container-fluid');
+      const chatInputContainer = document.querySelector('.chat-input-container');
+      const collapseButton = document.getElementById('collapseButton');
+
+      if (chatWrapper && chatContainer && outerContainer) {
+        // Animate back to compact size
+        chatWrapper.style.transition = 'all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94)';
+        chatContainer.style.transition = 'height 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94)';
+
+        // Collapse back to original size
+        setTimeout(() => {
+          chatWrapper.style.maxWidth = '1000px';
+          chatWrapper.style.width = '100%';
+          chatWrapper.style.height = 'auto';
+          chatWrapper.style.borderRadius = '16px';
+          chatWrapper.style.boxShadow = '0 8px 32px rgba(0, 0, 0, 0.12), 0 2px 6px rgba(0, 0, 0, 0.08)';
+          chatWrapper.style.position = 'static';
+          chatWrapper.style.top = 'auto';
+          chatWrapper.style.left = 'auto';
+          chatWrapper.style.transform = 'none';
+          chatWrapper.style.zIndex = 'auto';
+
+          // Reset chat container height
+          chatContainer.style.height = 'auto';
+          chatContainer.style.minHeight = '300px';
+          chatContainer.style.maxHeight = 'none';
+
+          // Reset input container
+          if (chatInputContainer) {
+            chatInputContainer.style.position = 'static';
+            chatInputContainer.style.bottom = 'auto';
+            chatInputContainer.style.left = 'auto';
+            chatInputContainer.style.right = 'auto';
+            chatInputContainer.style.zIndex = 'auto';
+            chatInputContainer.style.boxShadow = 'none';
+            chatInputContainer.style.maxWidth = 'none';
+            chatInputContainer.style.margin = '0';
+            chatInputContainer.style.borderRadius = '0';
+          }
+
+          // Reset outer container
+          outerContainer.style.padding = '40px';
+          outerContainer.style.minHeight = 'auto';
+          outerContainer.style.height = 'auto';
+          outerContainer.style.overflow = 'visible';
+          outerContainer.style.justifyContent = 'center';
+          outerContainer.style.alignItems = 'flex-start';
+
+          // Reset body scrolling
+          document.body.style.overflowX = 'auto';
+
+          // Hide collapse button
+          if (collapseButton) {
+            collapseButton.style.display = 'none';
+          }
+
+          // Reset messages area
+          const chatMessages = document.getElementById('chatMessages');
+          if (chatMessages) {
+            chatMessages.style.paddingBottom = '16px';
+            chatMessages.style.maxHeight = 'none';
+
+            // Clear chat history - keep only the welcome message
+            const welcomeMessage = chatMessages.querySelector('.message-group');
+            chatMessages.innerHTML = '';
+            if (welcomeMessage) {
+              chatMessages.appendChild(welcomeMessage);
+            }
+          }
+
+          // Show suggested actions when back to compact mode
+          const suggestedActions = document.querySelector('.suggested-actions');
+          if (suggestedActions) {
+            suggestedActions.style.display = 'flex';
+          }
+
+        }, 50);
+      }
+    }
+
+    // Send suggested message
+    function sendSuggestedMessage(message) {
+      // Expand chat to full screen before sending
+      expandChatToFullScreen();
+
+      document.getElementById('messageInput').value = message;
+      toggleSendButton();
+      sendMessage();
+    }
+
+    // Add user message to chat
+    function addUserMessage(message) {
+      const chatMessages = document.getElementById('chatMessages');
+      const messageDiv = document.createElement('div');
+      messageDiv.className = 'message-group';
+      messageDiv.style.cssText = 'display: flex; align-items: flex-start; gap: 12px; justify-content: flex-end;';
+
+      messageDiv.innerHTML = `
+        <div class="message-content" style="max-width: 70%; display: flex; flex-direction: column; gap: 8px; align-items: flex-end;">
+          <div class="message-bubble" style="background: linear-gradient(135deg, #0078d4 0%, #106ebe 100%); color: white; padding: 12px 16px; border-radius: 16px; border-bottom-right-radius: 4px; box-shadow: 0 1px 2px rgba(0,0,0,0.04);">
+            <p style="margin: 0; font-size: 14px; line-height: 1.4;">${message}</p>
+          </div>
+          <div class="message-timestamp" style="font-size: 11px; color: #605e5c; margin-right: 16px;">
+            ${new Date().toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'})}
+          </div>
+        </div>
+        <div class="avatar" style="width: 28px; height: 28px; background: #28a745; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: 600; font-size: 12px; flex-shrink: 0;">
+          You
+        </div>
+      `;
+
+      chatMessages.appendChild(messageDiv);
+      chatMessages.scrollTop = chatMessages.scrollHeight;
+    }
+
+    // Format bot message for better readability
+    function formatBotMessage(message) {
+      if (!message) return '';
+
+      // Convert line breaks and handle various formatting
+      let formatted = message
+        // Handle line breaks
+        .replace(/\r?\n/g, '<br>')
+        // Handle bullet points (various formats)
+        .replace(/^[\s]*[-•*]\s+(.+)$/gm, '<li>$1</li>')
+        .replace(/^[\s]*\d+\.\s+(.+)$/gm, '<li>$1</li>')
+        // Handle **bold** formatting
+        .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
+        // Handle *italic* formatting
+        .replace(/(?<!\*)\*(?!\*)([^*]+)\*(?!\*)/g, '<em>$1</em>')
+        // Handle multiple consecutive line breaks
+        .replace(/(<br\s*\/?>){3,}/g, '<br><br>')
+        // Handle headers (## Header or # Header)
+        .replace(/^#{1,3}\s+(.+)$/gm, '<strong style="font-size: 16px; color: #323130; display: block; margin: 8px 0 4px 0;">$1</strong>')
+        // Clean up any leading/trailing whitespace
+        .trim();
+
+      // Wrap consecutive <li> elements in <ul> tags
+      formatted = formatted.replace(/(<li>.*<\/li>)(\s*<li>.*<\/li>)*/g, function(match) {
+        return '<ul style="margin: 8px 0; padding-left: 20px; color: #323130;">' + match + '</ul>';
+      });
+
+      // Handle paragraphs (double line breaks)
+      formatted = formatted.replace(/(<br\s*\/?>){2}/g, '</p><p style="margin: 8px 0; color: #323130; font-size: 14px; line-height: 1.4;">');
+
+      // Wrap in paragraph if doesn't start with specific tags
+      if (!formatted.match(/^<(ul|ol|h[1-6]|div|p|strong)/)) {
+        formatted = '<p style="margin: 0; color: #323130; font-size: 14px; line-height: 1.4;">' + formatted + '</p>';
+      } else {
+        // Add opening paragraph if we added closing ones
+        if (formatted.includes('</p><p')) {
+          formatted = '<p style="margin: 0; color: #323130; font-size: 14px; line-height: 1.4;">' + formatted + '</p>';
+        }
+      }
+
+      return formatted;
+    }
+
+    // Show typing indicator with 3 flashing dots
+    function showTypingIndicator() {
+      // Remove any existing typing indicator first
+      removeTypingIndicator();
+
+      const chatMessages = document.getElementById('chatMessages');
+      const typingDiv = document.createElement('div');
+      typingDiv.id = 'typingIndicator';
+      typingDiv.className = 'message-group typing-indicator';
+      typingDiv.style.cssText = 'display: flex; align-items: flex-start; gap: 12px; opacity: 0; animation: fadeIn 0.3s ease-in-out forwards;';
+
+      typingDiv.innerHTML = `
+        <img src="https://max365.powerappsportals.com/Max%20Bot%20-%20without%20name.png" alt="Max Bot" class="avatar" style="width: 28px; height: 28px; border-radius: 50%; object-fit: cover; border: 2px solid #0078d4; flex-shrink: 0;" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+        <div class="avatar" style="width: 28px; height: 28px; background: linear-gradient(135deg, #0078d4 0%, #106ebe 100%); border-radius: 50%; display: none; align-items: center; justify-content: center; color: white; font-weight: 600; font-size: 12px; flex-shrink: 0;">MAX</div>
+        <div class="message-content" style="max-width: 70%; display: flex; flex-direction: column; gap: 8px;">
+          <div class="message-bubble" style="background: white; padding: 16px 20px; border-radius: 16px; border-bottom-left-radius: 4px; box-shadow: 0 1px 2px rgba(0,0,0,0.04); border: 1px solid #e1dfdd;">
+            <div class="typing-dots" style="display: flex; align-items: center; gap: 4px; height: 20px;">
+              <div class="dot" style="width: 8px; height: 8px; background: #605e5c; border-radius: 50%; animation: typingDot 1.4s infinite ease-in-out; animation-delay: 0s;"></div>
+              <div class="dot" style="width: 8px; height: 8px; background: #605e5c; border-radius: 50%; animation: typingDot 1.4s infinite ease-in-out; animation-delay: 0.16s;"></div>
+              <div class="dot" style="width: 8px; height: 8px; background: #605e5c; border-radius: 50%; animation: typingDot 1.4s infinite ease-in-out; animation-delay: 0.32s;"></div>
+            </div>
+          </div>
+        </div>
+      `;
+
+      chatMessages.appendChild(typingDiv);
+      chatMessages.scrollTop = chatMessages.scrollHeight;
+
+      // Add CSS animations if not already added
+      if (!document.getElementById('typingAnimations')) {
+        const style = document.createElement('style');
+        style.id = 'typingAnimations';
+        style.textContent = `
+          @keyframes typingDot {
+            0%, 60%, 100% {
+              transform: translateY(0);
+              opacity: 0.4;
+            }
+            30% {
+              transform: translateY(-10px);
+              opacity: 1;
+            }
+          }
+
+          @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+          }
+
+          @keyframes fadeOut {
+            from { opacity: 1; transform: translateY(0); }
+            to { opacity: 0; transform: translateY(-10px); }
+          }
+        `;
+        document.head.appendChild(style);
+      }
+    }
+
+    // Remove typing indicator
+    function removeTypingIndicator() {
+      const typingIndicator = document.getElementById('typingIndicator');
+      if (typingIndicator) {
+        // Fade out animation
+        typingIndicator.style.animation = 'fadeOut 0.3s ease-in-out forwards';
+        setTimeout(() => {
+          if (typingIndicator.parentNode) {
+            typingIndicator.parentNode.removeChild(typingIndicator);
+          }
+        }, 300);
+      }
+    }
+
+    // Add bot message to chat
+    function addBotMessage(message) {
+      // Remove typing indicator before showing the actual message
+      removeTypingIndicator();
+
+      const chatMessages = document.getElementById('chatMessages');
+      const messageDiv = document.createElement('div');
+      messageDiv.className = 'message-group';
+      messageDiv.style.cssText = 'display: flex; align-items: flex-start; gap: 12px; opacity: 0; animation: fadeIn 0.3s ease-in-out forwards;';
+
+      const formattedMessage = formatBotMessage(message);
+
+      messageDiv.innerHTML = `
+        <img src="https://max365.powerappsportals.com/Max%20Bot%20-%20without%20name.png" alt="Max Bot" class="avatar" style="width: 28px; height: 28px; border-radius: 50%; object-fit: cover; border: 2px solid #0078d4; flex-shrink: 0;" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+        <div class="avatar" style="width: 28px; height: 28px; background: linear-gradient(135deg, #0078d4 0%, #106ebe 100%); border-radius: 50%; display: none; align-items: center; justify-content: center; color: white; font-weight: 600; font-size: 12px; flex-shrink: 0;">MAX</div>
+        <div class="message-content" style="max-width: 70%; display: flex; flex-direction: column; gap: 8px;">
+          <div class="message-bubble" style="background: white; padding: 16px 20px; border-radius: 16px; border-bottom-left-radius: 4px; box-shadow: 0 1px 2px rgba(0,0,0,0.04); border: 1px solid #e1dfdd;">
+            <div style="color: #323130; font-size: 14px; line-height: 1.5;">${formattedMessage}</div>
+          </div>
+          <div class="message-timestamp" style="font-size: 11px; color: #605e5c; margin-left: 16px;">
+            ${new Date().toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'})}
+          </div>
+        </div>
+      `;
+
+      chatMessages.appendChild(messageDiv);
+      chatMessages.scrollTop = chatMessages.scrollHeight;
+    }
+
+    // Initialize
+    document.addEventListener('DOMContentLoaded', function() {
+      toggleSendButton();
+      // Initialize Copilot Studio connection
+      initializeCopilotConnection();
+    });
+  </script>
+</div>
