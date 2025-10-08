@@ -3,15 +3,15 @@
   <!-- Background Overlay for better contrast -->
   <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0, 0, 0, 0.4); z-index: 1;"></div>
   <div class="container-fluid" style="padding: 0px; display: flex; justify-content: center; align-items: flex-start; min-height: auto; max-width: 100%; padding-top: 40px; position: relative; z-index: 2;">
-    <!-- Centered Chat Container with Drop Shadow -->
-    <div class="chat-wrapper" style="width: 100%; max-width: 1000px; background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); border-radius: 16px; box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2), 0 2px 6px rgba(0, 0, 0, 0.15); overflow: hidden; border: 1px solid rgba(255, 255, 255, 0.2);">
+    <!-- Centered Chat Container with Enhanced Glassmorphism -->
+    <div class="chat-wrapper" style="width: 100%; max-width: 1000px; background: rgba(255, 255, 255, 0.15); backdrop-filter: blur(25px); -webkit-backdrop-filter: blur(25px); border-radius: 20px; box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3), 0 4px 12px rgba(0, 0, 0, 0.2); overflow: hidden; border: 1px solid rgba(255, 255, 255, 0.3);">
       `
       <!-- Chat Interface Container -->
       <div class="chat-container" style="display: flex; flex-direction: column; height: auto; min-height: 300px; background: #f3f2f1; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
         <!-- Chat Header -->
-        <div class="chat-header" style="background: white; border-bottom: 1px solid #e1dfdd; padding: 16px 24px; display: flex; align-items: center; justify-content: space-between; box-shadow: 0 1px 2px rgba(0,0,0,0.04);">
+        <div class="chat-header" style="background: rgba(255, 255, 255, 0.2); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border-bottom: 1px solid rgba(255, 255, 255, 0.3); padding: 16px 24px; display: flex; align-items: center; justify-content: space-between; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
           <div style="display: flex; align-items: center; gap: 12px;">
-            <img src="https://max365.powerappsportals.com/Max%20Bot%20-%20without%20name.png" alt="Max Bot" style="width: 32px; height: 32px; border-radius: 50%; object-fit: cover; border: 2px solid #0078d4;" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+            <img src="/maxavatar.png" alt="Max Bot" style="width: 32px; height: 32px; border-radius: 50%; object-fit: cover; border: 2px solid #0078d4;" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
             <div style="width: 32px; height: 32px; background: linear-gradient(135deg, #0078d4 0%, #106ebe 100%); border-radius: 50%; display: none; align-items: center; justify-content: center; color: white; font-weight: 600; font-size: 14px;">MAX</div>
             <div>
               <h3 style="margin: 0; font-size: 16px; font-weight: 600; color: #323130;">Max365 Digital Staff</h3>
@@ -24,21 +24,21 @@
           </div>
         </div>
         <!-- Chat Messages Area -->
-        <div id="chatMessages" class="chat-messages" style="overflow-y: auto; padding: 16px 24px; display: flex; flex-direction: column; gap: 16px; background: #f3f2f1;">
+        <div id="chatMessages" class="chat-messages" style="overflow-y: auto; padding: 16px 24px; display: flex; flex-direction: column; gap: 16px; background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(30px); -webkit-backdrop-filter: blur(30px);">
           <!-- Welcome Message -->
           <div class="message-group" style="display: flex; align-items: flex-start; gap: 12px;">
-            <img src="https://max365.powerappsportals.com/Max%20Bot%20-%20without%20name.png" alt="Max Bot" class="avatar" style="width: 28px; height: 28px; border-radius: 50%; object-fit: cover; border: 2px solid #0078d4; flex-shrink: 0;" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+            <img src="/maxavatar.png" alt="Max Bot" class="avatar" style="width: 28px; height: 28px; border-radius: 50%; object-fit: cover; border: 2px solid #0078d4; flex-shrink: 0;" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
             <div class="avatar" style="width: 28px; height: 28px; background: linear-gradient(135deg, #0078d4 0%, #106ebe 100%); border-radius: 50%; display: none; align-items: center; justify-content: center; color: white; font-weight: 600; font-size: 12px; flex-shrink: 0;">MAX</div>
             <div class="message-content" style="max-width: 70%; display: flex; flex-direction: column; gap: 8px;">
-              <div class="message-bubble" style="background: white; padding: 12px 16px; border-radius: 16px; border-bottom-left-radius: 4px; box-shadow: 0 1px 2px rgba(0,0,0,0.04); border: 1px solid #e1dfdd;"><p style="margin: 0; color: #323130; font-size: 14px; line-height: 1.4;">Welcome to Max365, your partner in maximizing the value of your Microsoft investment.</p></div>
-              <div class="message-bubble" style="background: white; padding: 12px 16px; border-radius: 16px; border-bottom-left-radius: 4px; box-shadow: 0 1px 2px rgba(0,0,0,0.04); border: 1px solid #e1dfdd;"><p style="margin: 0; color: #323130; font-size: 14px; line-height: 1.4;">My name is Max, and I'm here as part of our dedicated team ready to support you.</p></div>
-              <div class="message-bubble" style="background: white; padding: 12px 16px; border-radius: 16px; border-bottom-left-radius: 4px; box-shadow: 0 1px 2px rgba(0,0,0,0.04); border: 1px solid #e1dfdd;"><p style="margin: 0; color: #323130; font-size: 14px; line-height: 1.4;">You can begin by selecting one of the prompts below or simply type your question in the text box provided.</p></div>
+              <div class="message-bubble" style="background: rgba(255, 255, 255, 0.25); backdrop-filter: blur(15px); -webkit-backdrop-filter: blur(15px); padding: 12px 16px; border-radius: 16px; border-bottom-left-radius: 4px; box-shadow: 0 2px 8px rgba(0,0,0,0.15); border: 1px solid rgba(255, 255, 255, 0.3);"><p style="margin: 0; color: #1a1a1a; font-size: 14px; line-height: 1.4; font-weight: 500;">Welcome to Max365, your partner in maximizing the value of your Microsoft investment.</p></div>
+              <div class="message-bubble" style="background: rgba(255, 255, 255, 0.25); backdrop-filter: blur(15px); -webkit-backdrop-filter: blur(15px); padding: 12px 16px; border-radius: 16px; border-bottom-left-radius: 4px; box-shadow: 0 2px 8px rgba(0,0,0,0.15); border: 1px solid rgba(255, 255, 255, 0.3);"><p style="margin: 0; color: #1a1a1a; font-size: 14px; line-height: 1.4; font-weight: 500;">My name is Max, and I'm here as part of our dedicated team ready to support you.</p></div>
+              <div class="message-bubble" style="background: rgba(255, 255, 255, 0.25); backdrop-filter: blur(15px); -webkit-backdrop-filter: blur(15px); padding: 12px 16px; border-radius: 16px; border-bottom-left-radius: 4px; box-shadow: 0 2px 8px rgba(0,0,0,0.15); border: 1px solid rgba(255, 255, 255, 0.3);"><p style="margin: 0; color: #1a1a1a; font-size: 14px; line-height: 1.4; font-weight: 500;">You can begin by selecting one of the prompts below or simply type your question in the text box provided.</p></div>
               <div class="message-timestamp" style="font-size: 11px; color: #605e5c; margin-left: 16px;">Just now</div>
             </div>
           </div>
         </div>
         <!-- Chat Input Area -->
-        <div class="chat-input-container" style="background: white; border-top: 1px solid #e1dfdd; padding: 16px 24px;">
+        <div class="chat-input-container" style="background: rgba(255, 255, 255, 0.2); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border-top: 1px solid rgba(255, 255, 255, 0.3); padding: 16px 24px;">
           <div class="input-wrapper" style="display: flex; align-items: flex-end; gap: 12px; max-width: 100%; position: relative;">
             <!-- Message Input -->
             <div class="message-input-container" style="flex: 1; position: relative;">
@@ -110,39 +110,98 @@
       }
     }
 
-    // Direct Line integration with Copilot Studio
+    // Secure Direct Line integration with Copilot Studio via Power Automate
     let directLineConnection = null;
-    const DIRECT_LINE_SECRET = 'YOUR_DIRECT_LINE_SECRET_HERE';
+    let tokenFetchTime = null;
+    const TOKEN_ENDPOINT = 'https://36e933a88842ef63948328ecc268fe.c4.environment.api.powerplatform.com:443/powerautomate/automations/direct/workflows/8c9c9c64a5b94a97b7365caa5b0626ed/triggers/manual/paths/invoke?api-version=1&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=0yu5S2FIAD3i1Jkyt5bzIln6ERrtazgX6mukgmr7Jxw';
+    const USER_ID = 'user-' + Math.random().toString(36).substr(2, 9) + '-' + Date.now();
+    const TOKEN_REFRESH_THRESHOLD = 55 * 60 * 1000; // Refresh token after 55 minutes (tokens expire in 60 min)
 
-    async function initializeCopilotConnection() {
+    async function fetchSecureToken() {
       try {
-        console.log('🔄 Initializing Copilot Studio connection...');
+        console.log('� Fetching secure token from server...');
 
-        if (!DIRECT_LINE_SECRET || DIRECT_LINE_SECRET.includes('YOUR_DIRECT_LINE_SECRET_HERE')) {
-          throw new Error('Direct Line secret not configured. Please update DIRECT_LINE_SECRET.');
+        const response = await fetch(TOKEN_ENDPOINT, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({
+            userId: USER_ID,
+            timestamp: new Date().toISOString()
+          })
+        });
+
+        if (!response.ok) {
+          const errorText = await response.text();
+          throw new Error(`Token fetch failed: ${response.status} ${errorText}`);
         }
 
-        // Create Direct Line conversation
+        const tokenData = await response.json();
+        tokenFetchTime = Date.now();
+        
+        console.log('✅ Token received successfully');
+        console.log('📦 Token data:', {
+          conversationId: tokenData.conversationId,
+          hasToken: !!tokenData.token,
+          expiresIn: tokenData.expires_in
+        });
+
+        return tokenData;
+      } catch (error) {
+        console.error('❌ Failed to fetch token:', error);
+        throw error;
+      }
+    }
+
+    async function createDirectLineConversation(token) {
+      try {
+        console.log('🚀 Starting Direct Line conversation...');
+
         const response = await fetch('https://directline.botframework.com/v3/directline/conversations', {
           method: 'POST',
           headers: {
-            'Authorization': `Bearer ${DIRECT_LINE_SECRET}`,
+            'Authorization': `Bearer ${token}`,
             'Content-Type': 'application/json'
           }
         });
 
         if (!response.ok) {
-          throw new Error(`Failed to create Direct Line conversation: ${response.status}`);
+          const errorText = await response.text();
+          throw new Error(`Failed to create conversation: ${response.status} ${errorText}`);
         }
 
         const data = await response.json();
-        directLineConnection = {
+        console.log('✅ Conversation started:', {
           conversationId: data.conversationId,
-          token: data.token,
-          streamUrl: data.streamUrl
+          streamUrl: data.streamUrl ? 'Available' : 'N/A'
+        });
+
+        return data;
+      } catch (error) {
+        console.error('❌ Failed to create conversation:', error);
+        throw error;
+      }
+    }
+
+    async function initializeCopilotConnection() {
+      try {
+        console.log('🔄 Initializing Copilot Studio connection...');
+
+        // Step 1: Fetch secure token from Power Automate
+        const tokenData = await fetchSecureToken();
+
+        // Step 2: Create conversation with Direct Line using the token
+        const conversationData = await createDirectLineConversation(tokenData.token);
+
+        // Step 3: Store connection details
+        directLineConnection = {
+          conversationId: conversationData.conversationId,
+          token: tokenData.token,
+          streamUrl: conversationData.streamUrl
         };
 
-        console.log('✅ Direct Line conversation created:', data);
+        console.log('✅ Direct Line conversation created:', conversationData.conversationId);
 
         // Start listening for bot responses
         startListeningForResponses();
@@ -150,12 +209,50 @@
 
       } catch (error) {
         console.error('❌ Failed to connect to Copilot Studio:', error);
-        addBotMessage(`Connection failed: ${error.message}`);
+        
+        // User-friendly error messages
+        let errorMessage = 'Connection failed. ';
+        if (error.message.includes('404')) {
+          errorMessage += 'Bot service not found. Please check configuration.';
+        } else if (error.message.includes('401') || error.message.includes('403')) {
+          errorMessage += 'Authentication failed. Please contact support.';
+        } else if (error.message.includes('CORS')) {
+          errorMessage += 'Security configuration issue. Please contact support.';
+        } else {
+          errorMessage += 'Please refresh the page and try again.';
+        }
+        
+        addBotMessage(errorMessage);
+      }
+    }
+
+    async function refreshTokenIfNeeded() {
+      if (!tokenFetchTime) return;
+
+      const tokenAge = Date.now() - tokenFetchTime;
+      
+      if (tokenAge > TOKEN_REFRESH_THRESHOLD) {
+        console.log('🔄 Token refresh needed (age: ' + Math.floor(tokenAge / 60000) + ' minutes)');
+        
+        try {
+          // Re-initialize connection with fresh token
+          console.log('🔄 Connection expired or missing, re-initializing...');
+          directLineConnection = null;
+          tokenFetchTime = null;
+          await initializeCopilotConnection();
+        } catch (error) {
+          console.error('❌ Token refresh failed:', error);
+          addBotMessage('Connection refresh failed. Please reload the page.');
+        }
       }
     }
 
     async function sendToCopilotStudio(message) {
       console.log('📤 Sending message to Copilot Studio:', message);
+      console.log('👤 Using user ID:', USER_ID);
+
+      // Check if token needs refresh before sending
+      await refreshTokenIfNeeded();
 
       if (!directLineConnection) {
         console.log('🔄 No connection, initializing...');
@@ -169,10 +266,9 @@
       }
 
       try {
-        const userId = 'user-' + Math.random().toString(36).substr(2, 9);
         const messagePayload = {
           type: 'message',
-          from: { id: userId },
+          from: { id: USER_ID },
           text: message
         };
 
@@ -205,7 +301,7 @@
       }
     }
 
-    // Listen for bot responses
+    // Listen for bot responses with enhanced message handling
     let lastActivityId = 0;
     let pollingActive = false;
 
@@ -229,7 +325,6 @@
           if (response.ok) {
             const data = await response.json();
             console.log('📨 Received activities:', data.activities?.length || 0);
-            console.log('📨 Full response data:', data);
 
             if (data.activities && data.activities.length > 0) {
               // Process ALL activities to ensure we don't miss any
@@ -238,11 +333,12 @@
                   id: activity.id,
                   type: activity.type,
                   from: activity.from,
-                  text: activity.text,
+                  hasText: !!activity.text,
+                  hasAttachments: !!(activity.attachments && activity.attachments.length),
                   timestamp: activity.timestamp
                 });
 
-                // Check if this is a bot message (not from user and not a conversationUpdate)
+                // Check if this is a bot message
                 const isFromBot = activity.from && (
                   activity.from.id === 'bot' ||
                   activity.from.name === 'Bot' ||
@@ -251,8 +347,8 @@
                 );
 
                 const isMessageType = activity.type === 'message';
-                const hasText = activity.text && activity.text.trim().length > 0;
-                // Extract numeric part from activity ID (e.g., "4XSk9u8LFvgFxjPCITiTdL-au|0000005" -> 5)
+                
+                // Extract activity number for watermark
                 const activityIdParts = activity.id.split('|');
                 const activityNumber = activityIdParts.length > 1 ? parseInt(activityIdParts[1]) : parseInt(activity.id);
                 const isNewActivity = !lastActivityId || activityNumber > lastActivityId;
@@ -260,21 +356,69 @@
                 console.log('🔍 Activity checks:', {
                   isFromBot,
                   isMessageType,
-                  hasText,
                   isNewActivity,
-                  activityId: activity.id,
                   activityNumber,
-                  lastActivityId,
-                  rawActivityId: activity.id
+                  lastActivityId
                 });
 
-                if (isFromBot && isMessageType && hasText && isNewActivity) {
-                  console.log('💬 Bot message received:', activity.text);
-                  addBotMessage(activity.text);
+                if (isFromBot && isMessageType && isNewActivity) {
+                  // Remove typing indicator when bot responds
+                  removeTypingIndicator();
+
+                  // Handle text messages
+                  if (activity.text && activity.text.trim().length > 0) {
+                    console.log('💬 Bot message received:', activity.text);
+                    addBotMessage(activity.text);
+                  }
+
+                  // Handle attachments (Adaptive Cards, OAuth cards, etc.)
+                  if (activity.attachments && activity.attachments.length > 0) {
+                    activity.attachments.forEach(attachment => {
+                      console.log('📎 Processing attachment:', attachment.contentType);
+
+                      if (attachment.contentType === 'application/vnd.microsoft.card.oauth') {
+                        // OAuth card - authentication required
+                        console.log('🔐 OAuth card detected');
+                        const oauthMessage = attachment.content?.text || 'To continue, please login';
+                        console.log('📝 OAuth card message:', oauthMessage);
+                        addBotMessage(`⚠️ ${oauthMessage}\n\nNote: This bot requires authentication. Please contact your administrator to configure "No authentication" in Copilot Studio.`);
+                      } else if (attachment.contentType === 'application/vnd.microsoft.card.adaptive') {
+                        // Adaptive Card
+                        console.log('🎴 Adaptive card detected');
+                        const cardBody = attachment.content?.body;
+                        if (cardBody && Array.isArray(cardBody)) {
+                          const textElements = cardBody
+                            .filter(el => el.type === 'TextBlock')
+                            .map(el => el.text)
+                            .join('\n\n');
+                          if (textElements) {
+                            console.log('💬 Adaptive card text:', textElements);
+                            addBotMessage(textElements);
+                          }
+                        }
+                      } else if (attachment.contentType === 'application/vnd.microsoft.card.hero') {
+                        // Hero Card
+                        console.log('🦸 Hero card detected');
+                        const title = attachment.content?.title || '';
+                        const text = attachment.content?.text || '';
+                        const message = [title, text].filter(Boolean).join('\n\n');
+                        if (message) {
+                          addBotMessage(message);
+                        }
+                      } else {
+                        console.log('⚠️ Unsupported attachment type:', attachment.contentType);
+                      }
+                    });
+                  }
+
+                  // If no text and no recognized attachments
+                  if (!activity.text && (!activity.attachments || activity.attachments.length === 0)) {
+                    console.log('⚠️ Bot response has no displayable content');
+                  }
                 }
               });
 
-              // Update watermark to the highest activity ID (handle complex ID format)
+              // Update watermark to the highest activity ID
               const activityNumbers = data.activities.map(a => {
                 const parts = a.id.split('|');
                 return parts.length > 1 ? parseInt(parts[1]) : parseInt(a.id);
@@ -288,7 +432,6 @@
 
               // Also update watermark from response if available
               if (data.watermark) {
-                console.log('📍 Response watermark:', data.watermark);
                 lastActivityId = Math.max(lastActivityId, parseInt(data.watermark) || 0);
               }
             } else {
@@ -296,13 +439,18 @@
             }
           } else {
             console.error('❌ Polling failed:', response.status, response.statusText);
-            const errorText = await response.text();
-            console.error('❌ Error response:', errorText);
+            
+            if (response.status === 404) {
+              const errorData = await response.json().catch(() => ({}));
+              console.error('❌ Error details:', errorData);
+              console.error('🔍 Conversation ID being polled:', directLineConnection.conversationId);
+              console.log('💡 Tip: If you see "Conversation not found", ensure you\'re using the conversationId from the /conversations endpoint, not the token endpoint');
+            }
 
             if (response.status === 403 || response.status === 401) {
-              console.error('🔐 Authentication issue - stopping polling');
-              pollingActive = false;
-              return;
+              console.error('🔐 Authentication issue - may need token refresh');
+              // Try to refresh token
+              await refreshTokenIfNeeded();
             }
           }
 
@@ -598,14 +746,14 @@
       typingDiv.style.cssText = 'display: flex; align-items: flex-start; gap: 12px; opacity: 0; animation: fadeIn 0.3s ease-in-out forwards;';
 
       typingDiv.innerHTML = `
-        <img src="https://max365.powerappsportals.com/Max%20Bot%20-%20without%20name.png" alt="Max Bot" class="avatar" style="width: 28px; height: 28px; border-radius: 50%; object-fit: cover; border: 2px solid #0078d4; flex-shrink: 0;" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+        <img src="/maxavatar.png" alt="Max Bot" class="avatar" style="width: 28px; height: 28px; border-radius: 50%; object-fit: cover; border: 2px solid #0078d4; flex-shrink: 0;" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
         <div class="avatar" style="width: 28px; height: 28px; background: linear-gradient(135deg, #0078d4 0%, #106ebe 100%); border-radius: 50%; display: none; align-items: center; justify-content: center; color: white; font-weight: 600; font-size: 12px; flex-shrink: 0;">MAX</div>
         <div class="message-content" style="max-width: 70%; display: flex; flex-direction: column; gap: 8px;">
-          <div class="message-bubble" style="background: white; padding: 16px 20px; border-radius: 16px; border-bottom-left-radius: 4px; box-shadow: 0 1px 2px rgba(0,0,0,0.04); border: 1px solid #e1dfdd;">
+          <div class="message-bubble" style="background: rgba(255, 255, 255, 0.25); backdrop-filter: blur(15px); -webkit-backdrop-filter: blur(15px); padding: 16px 20px; border-radius: 16px; border-bottom-left-radius: 4px; box-shadow: 0 2px 8px rgba(0,0,0,0.15); border: 1px solid rgba(255, 255, 255, 0.3);">
             <div class="typing-dots" style="display: flex; align-items: center; gap: 4px; height: 20px;">
-              <div class="dot" style="width: 8px; height: 8px; background: #605e5c; border-radius: 50%; animation: typingDot 1.4s infinite ease-in-out; animation-delay: 0s;"></div>
-              <div class="dot" style="width: 8px; height: 8px; background: #605e5c; border-radius: 50%; animation: typingDot 1.4s infinite ease-in-out; animation-delay: 0.16s;"></div>
-              <div class="dot" style="width: 8px; height: 8px; background: #605e5c; border-radius: 50%; animation: typingDot 1.4s infinite ease-in-out; animation-delay: 0.32s;"></div>
+              <div class="dot" style="width: 8px; height: 8px; background: #333; border-radius: 50%; animation: typingDot 1.4s infinite ease-in-out; animation-delay: 0s;"></div>
+              <div class="dot" style="width: 8px; height: 8px; background: #333; border-radius: 50%; animation: typingDot 1.4s infinite ease-in-out; animation-delay: 0.16s;"></div>
+              <div class="dot" style="width: 8px; height: 8px; background: #333; border-radius: 50%; animation: typingDot 1.4s infinite ease-in-out; animation-delay: 0.32s;"></div>
             </div>
           </div>
         </div>
@@ -671,13 +819,13 @@
       const formattedMessage = formatBotMessage(message);
 
       messageDiv.innerHTML = `
-        <img src="https://max365.powerappsportals.com/Max%20Bot%20-%20without%20name.png" alt="Max Bot" class="avatar" style="width: 28px; height: 28px; border-radius: 50%; object-fit: cover; border: 2px solid #0078d4; flex-shrink: 0;" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+        <img src="/maxavatar.png" alt="Max Bot" class="avatar" style="width: 28px; height: 28px; border-radius: 50%; object-fit: cover; border: 2px solid #0078d4; flex-shrink: 0;" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
         <div class="avatar" style="width: 28px; height: 28px; background: linear-gradient(135deg, #0078d4 0%, #106ebe 100%); border-radius: 50%; display: none; align-items: center; justify-content: center; color: white; font-weight: 600; font-size: 12px; flex-shrink: 0;">MAX</div>
         <div class="message-content" style="max-width: 70%; display: flex; flex-direction: column; gap: 8px;">
-          <div class="message-bubble" style="background: white; padding: 16px 20px; border-radius: 16px; border-bottom-left-radius: 4px; box-shadow: 0 1px 2px rgba(0,0,0,0.04); border: 1px solid #e1dfdd;">
-            <div style="color: #323130; font-size: 14px; line-height: 1.5;">${formattedMessage}</div>
+          <div class="message-bubble" style="background: rgba(255, 255, 255, 0.25); backdrop-filter: blur(15px); -webkit-backdrop-filter: blur(15px); padding: 16px 20px; border-radius: 16px; border-bottom-left-radius: 4px; box-shadow: 0 2px 8px rgba(0,0,0,0.15); border: 1px solid rgba(255, 255, 255, 0.3);">
+            <div style="color: #1a1a1a; font-size: 14px; line-height: 1.5; font-weight: 500;">${formattedMessage}</div>
           </div>
-          <div class="message-timestamp" style="font-size: 11px; color: #605e5c; margin-left: 16px;">
+          <div class="message-timestamp" style="font-size: 11px; color: #333; margin-left: 16px; font-weight: 500;">
             ${new Date().toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'})}
           </div>
         </div>
